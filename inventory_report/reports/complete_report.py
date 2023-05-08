@@ -10,7 +10,7 @@ class CompleteReport:
         company_item = Counter(company)
         report = f"{simple}\nProdutos estocados por empresa:\n"
         for i in set(company):
-            quantidade = company_item[i]
-            report += f"- {i}: {quantidade}\n"
+            quanty = company_item[i]
+            report += f"- {i}: {quanty}\n"
 
         return report
