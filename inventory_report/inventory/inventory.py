@@ -1,5 +1,5 @@
 import csv
-# import json
+import json
 # import xml.etree.ElementTree as Et
 from inventory_report.reports.simple_report import SimpleReport
 from inventory_report.reports.complete_report import CompleteReport
@@ -10,10 +10,17 @@ def func_csv(file):
     return [row for row in data]
 
 
+def func_json(file):
+    data = file.read()
+    return json.loads(data)
+
+
 def read(path):
     with open(path) as file:
         if path.endswith(".csv"):
             return func_csv(file)
+        elif path.endswith(".json"):
+            return func_json(file)
 
 
 class Inventory:
